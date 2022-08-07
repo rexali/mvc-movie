@@ -8,11 +8,10 @@ namespace MvcMovie.Controllers
         // 
         // GET: /HelloWorld/
 
-        public string Index()
+        public IActionResult Index()
         {
-            return "This is my default action...";
+            return View();
         }
-
 
         // GET: /HelloWorld/Welcome/ 
         // Requires using System.Text.Encodings.Web;
@@ -21,7 +20,7 @@ namespace MvcMovie.Controllers
         {
             return HtmlEncoder.Default.Encode($"Hello {name}, NumTimes is: {numTimes}");
         }
-        
+
         // test https://localhost:7298/HelloWorld/Test/3?name=Rick
         public string Test(string name, int ID = 1)
         {
